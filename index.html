@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CompuCorp - HTML/JS Test</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/locateWeather.js"></script>
+	<style type="text/css">
+		#weatherContainer {
+			margin: 0 auto;
+			text-align: center;
+			width: 300px;
+		}
+		#toggle .changeMetric {
+			float: right;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- NAVIGATION -->
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="navbar-header">
+			<a class="navbar-brand">CompuCorp - HTML/JS Task</a>
+		</div>
+	</nav>
+
+	<!-- MAIN CONTENT -->
+	<div class="container">		
+		<div class="panel panel-default" style="background: rgba(255,255,255,0.6);">
+			<div class="panel-heading">
+				<h4 class="panel-title">Weather Forecast:</h4>
+			</div>
+			<div class="panel-body" id="get-location-form">
+				<p>Sorry to bother you but either your browser is too old or you have not shared your location with us!</p>
+				<p>Please insert any of following fields in a row to display the weather for particular location. (Priority of input fields is set as per row index):</p>
+				<table class="table">
+					<tr>
+						<th>1</th>
+						<td>
+							<span>Latitude:</span>
+						</td>
+						<td>
+							<input type="text" name="latitude" id="latitude"></input>
+						</td>
+						<td>
+							<span>Longitude:</span>
+						</td>
+						<td>
+							<input type="text" name="longitude" id="longitude"></input>
+						</td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>
+							<span>Enter Postal code:</span>
+						</td>
+						<td colspan="3">
+							<input type="text" name="postCode" id="postCode"></input>
+						</td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>
+							<span>Enter City Name:</span>
+						</td>
+						<td colspan="3">
+							<input type="text" name="cityName" id="cityName"></input>
+						</td>
+					</tr>
+					</tr>
+					<tr>
+						<td colspan="5">
+							<button name="getWeather" id="getWeather">Show Weather</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="weatherInfo" style="display: none;">
+				<form id="toggle">
+					<div class="changeLocation">
+						<button type="button" id="changeLocation">Change Location</button>
+					</div>
+					<div class="changeMetric">
+						<button type="button" id="metric">&deg;C</button>
+						<button type="button" id="imperial">&deg;F</button>
+					</div>
+				</form>
+				<article id="weatherContainer">
+					<section id="weather">
+						<img alt="loading" id="spinner" src="https://raw.githubusercontent.com/meskarune/mylocalweather/gh-pages/assets/spinner.gif" />
+					</section>
+					<section id="forecast">
+						<noscript>This application requires JavaScript to function. Please enable scripts in your browser.</noscript>
+					</section>
+				</article>
+			</div>
+			<div id="failed"></div>
+		</div>
+	</div>
+</body>
+</html>
